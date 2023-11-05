@@ -21,6 +21,7 @@
     width: 50%;
     height: 50%;
     font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 5px;
@@ -34,7 +35,7 @@ button {
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 5px;
-    margin: 5% 0 5% 10%;
+    margin: 5% 0 5% 15px;
     background-color: teal;
     color: #f3fdf3;
     font-weight: bold;
