@@ -47,7 +47,14 @@ button {
     color: #f3fdf3;
     font-weight: bold;
 }
- .buttons {
+
+button:hover {
+    background-color: #f3fdf3;
+    color: teal;
+    cursor: pointer;
+}
+
+.buttons {
     display: flex;
     flex-flow: row, nowrap;
     width: 50%;
