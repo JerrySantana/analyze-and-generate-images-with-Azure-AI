@@ -8,7 +8,7 @@ function App() {
   const btnIg = <button name='imG'> Image generation </button>;
 
   const buttons = <div className='buttons'>{btnIa} {btnIg}</div>;
-  const body1 = <body> <div className='page'>{titles} {p1} {tb1} {buttons}</div> </body>;
+  const body1 = <body> <div className='page'>{p1} {tb1} {buttons}</div> </body>;
   
   const page = <html>{body1}</html>;
   
