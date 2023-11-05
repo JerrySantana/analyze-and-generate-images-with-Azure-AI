@@ -7,6 +7,7 @@
     margin-top: 20%;
     align-content: center;
     align-items: center;
+    background-color: slategray;
 }
 
 #hello {
@@ -19,10 +20,12 @@
 #textBox {
     width: 50%;
     height: 50%;
+    font-family: 'Times New Roman', Times, serif;
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 5%;
+    resize: none;
 }
 
 button {
@@ -31,9 +34,9 @@ button {
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 5px;
-    margin-bottom: 5%;
-    background-color: #000000;
-    color: #ffffff;
+    margin: 5% 0 5% 10%;
+    background-color: teal;
+    color: #f3fdf3;
     font-weight: bold;
 }
  .buttons {
