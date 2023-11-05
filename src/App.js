@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
   const value = 'World';
-  const p1 = <p id='hello'> Hello {value} </p>;
+  const p1 = <p id='hello'> Hello, {value}! </p>;
   const tb1 = <textarea id='textBox' name='textBox' placeholder='Enter your image url here:'></textarea>;
   const btnIa = <button name='imA'> Image analysis </button>;
   const btnIg = <button name='imG'> Image generation </button>;
