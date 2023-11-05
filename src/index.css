@@ -42,16 +42,16 @@ button {
     border: 1px solid #000000;
     border-radius: 5px;
     padding: 5px;
-    margin: 5% 15px 5% 0;
+    margin: 10px 20px 10px 0;
     background-color: teal;
     color: #f3fdf3;
     font-weight: bold;
 }
  .buttons {
     display: flex;
-    flex-flow: row, wrap;
+    flex-flow: row, nowrap;
     width: 50%;
-    height: 50%;
+    height: 40%;
     align-content: center;
     align-items: center;
     justify-content: center;
