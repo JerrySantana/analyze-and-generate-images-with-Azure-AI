@@ -1,9 +1,5 @@
 name: Azure Static Web Apps CI/CD
 
-env:
-    VISION_KEY: ${{ secrets.VISION_KEY }}
-    VISION_ENDPOINT: ${{ secrets.VISION_ENDPOINT }}
-
 on:
   push:
     branches:
@@ -35,6 +31,8 @@ jobs:
           app_location: "/" # App source code path
           api_location: "api" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
+          VISION_KEY: ${{ secrets.VISION_KEY }}
+          VISION_ENDPOINT: ${{ secrets.VISION_ENDPOINT }}
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
