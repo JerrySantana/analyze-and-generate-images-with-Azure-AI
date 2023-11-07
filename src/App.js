@@ -1,23 +1,49 @@
 import React from 'react';
-import analyzeImage from './azure-image-analysis.js';
+import { analyzeImage } from './azure-image-analysis.js';
 
 function App() {
-  const value = 'World';
-  const p1 = <p id='hello'> Hello, {value}! </p>;
-  const tb1 = <textarea id='textBox' name='textBox' placeholder='Enter your image url here:'></textarea>;
-  const btnIa = <button name='imA'> Image analysis </button>;
-  const btnIg = <button name='imG'> Image generation </button>;
-  btnIa.onclick = function() {
-    const url = document.getElementById('textBox').value;
-    const result = analyzeImage(url);
-    console.log(result);
-  }
-  const buttons = <div className='buttons'>{btnIa} {btnIg}</div>;
-  const body1 = <body> <div className='page'>{p1} {tb1} {buttons}</div> </body>;
-  
-  const page = <html>{body1}</html>;
-  
-  return page;
+  var [response, setResponse] = React.useState(null);
+  var [image, setImage] = React.useState("");
+  return (
+    <div className="App">
+      <h1>Hello, person!!</h1>
+      
+      <textarea id='textBox' name='textBox' placeholder='Enter your image url here:'></textarea>
+      
+      <div className='buttons'>
+      
+        <button name='imA' onClick={
+          () => (document.getElementById('textBox').value !== "") ? 
+          analyzeImage(document.getElementById('textBox').value)
+          .then(alert("Analyzing..."))
+          .then(response => setResponse(response))
+          .then(setImage(document.getElementById('textBox').value)) : 
+          alert("Give me something to analyze...")}>
+            Analyze. </button>
+      </div>
+
+      <hr />
+      <LoadImage img = {image}/>
+      
+      <DisplayResults id='results' responseJson = {(response !== null) ? response : "Nothing to analyze..."} />
+    </div>
+  );
 }
+
+function LoadImage({ img }) {
+  return (
+    <img id='image' src={img} alt="This would be a loading sh**, but I couldn't figure how to add one. So, give me your url and this will change. :)" />
+  )
+}
+
+function DisplayResults({ responseJson }) {
+  return (
+    <div>
+      <h2>Results:</h2>
+      <pre>{JSON.stringify(responseJson, null, 2)}</pre>
+    </div>
+  );
+}
+
 
 export default App;
